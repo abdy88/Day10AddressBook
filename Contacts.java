@@ -3,7 +3,7 @@ package bl.com.addressbook;
 public class Contacts {
 	
 
-	private String firstName;
+	public String firstName;
 	private String lastName;
 	private String address;
 	private String city;

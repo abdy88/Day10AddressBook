@@ -1,5 +1,6 @@
 package bl.com.addressbook;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBookServiceImpl implements AddressBookService {
@@ -8,14 +9,15 @@ public class AddressBookServiceImpl implements AddressBookService {
 	Contacts obj1 = new Contacts();
 
 	@Override
-	public void createContact() {
+	public  Contacts createContact() {
+		sc.nextLine();
 
 		System.out.println("Enter firstName");
 		obj1.setFirstName(sc.nextLine());
-		
+		sc.nextLine();
 		System.out.println("Enter lastName");
 		obj1.setLastName(sc.nextLine());
-		
+		sc.nextLine();
 		System.out.println("Enter address");
 		obj1.setAddress(sc.nextLine());
 		
@@ -35,7 +37,7 @@ public class AddressBookServiceImpl implements AddressBookService {
 		System.out.println("Enter email");
 		obj1.setEmail(sc.next());
 		
-		
+		return obj1;
 	}
 
 	@Override
@@ -54,4 +56,44 @@ public class AddressBookServiceImpl implements AddressBookService {
 		
 	}
 
-}
+	@Override
+	public void editContact(ArrayList<Contacts> contactList) {
+		
+		if(contactList.size() == 0)
+		{
+			System.out.println("Contact List empty");
+			
+		}
+		
+		System.out.println("Existing contacts are :");
+		
+		for(Contacts cont: contactList) {
+			System.out.print(cont.getFirstName());
+		}
+		
+		sc.nextLine(); 
+		System.out.print("Enter name of contact you want to edit : ");
+		String firstN = sc.nextLine(); 
+		
+		int index =checkContact(contactList, firstN);
+		if(index == -1)
+		{
+			System.out.println("name not found");
+		}
+		else
+			{contactList.set(index, createContact());}
+		
+	}
+		
+		private int checkContact(ArrayList<Contacts> contactList, String name) {
+			for(int i = 0; i < contactList.size(); i++) {
+				if(contactList.get(i).getFirstName().equals(name))
+				return i;
+			}
+			return -1;
+			
+	}
+
+	}
+	
+
