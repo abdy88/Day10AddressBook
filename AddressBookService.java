@@ -9,5 +9,7 @@ public interface AddressBookService {
 	public void displayContact();
 	
 	public void editContact(ArrayList<Contacts> contactList);
+	
+	public void deleteContact(ArrayList<Contacts> contactList);
 
 }
