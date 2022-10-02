@@ -67,6 +67,7 @@ public class AddressBookServiceImpl implements AddressBookService {
 			System.out.print(cont.getFirstName());
 		}
 
+		sc.nextLine();
 		System.out.println("Enter name of contact you want to edit : ");
 		String firstNm = sc.nextLine();
 

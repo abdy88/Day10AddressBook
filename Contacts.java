@@ -21,12 +21,7 @@ public class Contacts {
 		return firstName;
 	}
 
-	@Override
-	public String toString() {
-		return "Contacts [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
-				+ ", state=" + state + ", zip=" + zip + ", phoneNo=" + phoneNo + ", email=" + email + "]";
-	}
-
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -88,7 +83,12 @@ public class Contacts {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Contacts [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", zip=" + zip + ", phoneNo=" + phoneNo + ", email=" + email + "]";
+	}
+
 	
 
 }

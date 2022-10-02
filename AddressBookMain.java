@@ -13,6 +13,7 @@ public class AddressBookMain {
 		ArrayList<Contacts> contactList = new ArrayList<>();
 
 		AddressBookService obj2 = new AddressBookServiceImpl();
+		AddressBookService obj3 = new AddressBookServiceImpl();
 
 		int choice = 0;
 
@@ -27,9 +28,10 @@ public class AddressBookMain {
 
 			switch (choice) {
 			case 1:
-				Contacts c1 = obj2.createContact();
-				contactList.add(c1);
-				obj2.displayContact();
+//				Contacts c1 = obj2.createContact();
+				contactList.add(obj2.createContact());
+				contactList.add(obj3.createContact());
+//				obj2.displayContact();
 				System.out.println('\n');
 				break;
 			case 2:
