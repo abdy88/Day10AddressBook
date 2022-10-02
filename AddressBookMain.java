@@ -55,10 +55,24 @@ public class AddressBookMain {
 			default:
 				System.out.println("Please enter a valid option");
 				break;
+				
+				
+				
+				
+				
+				
 
 			}
 		}
 
 	}
 
-}
+	@Override
+	public String toString() {
+		return "AddressBookMain []";
+	}
+
+	
+	}
+
+
